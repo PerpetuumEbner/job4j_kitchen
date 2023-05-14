@@ -10,7 +10,7 @@ import ru.job4j.kitchen.model.Order;
 @AllArgsConstructor
 @Slf4j
 public class KitchenService {
-    @KafkaListener(topics = "job4j_order")
+    @KafkaListener(topics = "job4j_orders")
     public void receiveOrder(Order order) {
         log.debug(order.toString());
     }
