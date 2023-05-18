@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
+import ru.job4j.kitchen.dto.OrderDTO;
 import ru.job4j.kitchen.model.Order;
 
 @Service
@@ -11,7 +12,7 @@ import ru.job4j.kitchen.model.Order;
 @Slf4j
 public class KitchenService {
     @KafkaListener(topics = "job4j_orders")
-    public void receiveOrder(Order order) {
-        log.debug(order.toString());
+    public void receiveOrder(OrderDTO orderDTO) {
+        log.debug(orderDTO.toString());
     }
 }
